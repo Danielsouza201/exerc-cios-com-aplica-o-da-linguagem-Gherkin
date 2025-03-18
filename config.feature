@@ -1,16 +1,17 @@
-Feature:configurar produtos
+#language: pt
+Funcionalidade:configurar produtos
 
 como cliente da EBAC-SHOP
 quero configurar meu produto de acordo com meu tamanho e gosto
 e escolher a quantidade 
 para depois inserir no carrinho
 
- Scenario Outline: cor, tamanho e quantidade obrigatórios 
+ Esquema do Cenario: cor, tamanho e quantidade obrigatórios 
 
- Scenario: escolher cor, tamanho e quantidade
- Given que eu estiver escolhendo um produto 
- When eu inserir <cor>, <tamanho> e <quantidade>
- Then devo estar autorizado a adicionar o produto ao carrinho
+ Cenario: escolher cor, tamanho e quantidade
+ Dado que eu estiver escolhendo um produto 
+ Quando eu inserir <cor>, <tamanho> e <quantidade>
+ Entao devo estar autorizado a adicionar o produto ao carrinho
 
 |"cor"| "tamanho"|"quantidade"|
 |"azul"|"M"|"10"|
@@ -20,7 +21,7 @@ para depois inserir no carrinho
 |"preto"|pp|"10"|
 
 
-Scenario:botao de "limpar"
-Given que eu tenha selecionado cor, tamanho ou quantidade incorreto
-When eu apertar o botão de "limpar"
-Then a tela do carrinho deve excluir o iten selecionado
+Cenario:botao de "limpar"
+Dado que eu tenha selecionado cor, tamanho ou quantidade incorreto
+Quando eu apertar o botão de "limpar"
+Entao a tela do carrinho deve excluir o iten selecionado
